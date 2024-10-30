@@ -1,0 +1,84 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="AllTestsSuite">
+    <test name="First Suite" parallel="false">
+        <classes>
+            <class name="PostPetStoreCases" >
+            <methods>
+                <include name="testCreatePet_Positive" />
+            </methods>
+            </class>
+
+            <class name="GetPetStoreCases" >
+            <methods>
+                <include name="testGetPetById_Positive" />
+            </methods>
+            </class>
+
+            <class name="DeletePetStoreCases" >
+            <methods>
+                <include name="testDeletePet_Positive" />
+            </methods>
+            </class>
+
+            <class name="GetPetStoreCases" >
+            <methods>
+                <include name="testGetPetById_Negative_PetNotFound" />
+            </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Second Suite" parallel="false">
+        <classes>
+            <class name="PostPetStoreCases" >
+            <methods>
+                <include name="testCreatePet_Positive" />
+            </methods>
+            </class>
+
+            <class name="UpdatePetStoreCases" >
+            <methods>
+                <include name="testUpdatePet_Positive" />
+            </methods>
+            </class>
+
+            <class name="GetPetStoreCases" >
+            <methods>
+                <include name="testGetPetById_Positive" />
+            </methods>
+            </class>
+
+            <class name="DeletePetStoreCases" >
+            <methods>
+                <include name="testDeletePet_Positive" />
+            </methods>
+            </class>
+        </classes>
+    </test>
+      <test name="Third Suite (Negative Cases)" parallel="false">
+        <classes>
+            <class name="PostPetStoreCases" >
+            <methods>
+                <include name="testCreatePet_Negative_InvalidInput" />
+            </methods>
+            </class>
+
+            <class name="UpdatePetStoreCases" >
+            <methods>
+                <include name="testUpdatePet_Invalid_Id" />
+            </methods>
+            </class>
+
+            <class name="GetPetStoreCases" >
+            <methods>
+                <include name="testGetPetById_Negative_PetNotFound" />
+            </methods>
+            </class>
+
+            <class name="DeletePetStoreCases" >
+            <methods>
+                <include name="testDeletePet_Negative_PetNotFound" />
+            </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
